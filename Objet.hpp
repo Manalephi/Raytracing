@@ -4,6 +4,7 @@
 
 #include "Point.hpp"
 #include "Vecteur.hpp"
+#include "Source.hpp"
 #include <vector>
 
 #include "InfoInterception.hpp"
@@ -18,12 +19,12 @@ class Objet
     public:
 
     /* Constructeur */
-    Objet(double kd, double kr);
+    Objet(Couleur kd, double kr);
 
     /* Renvoie kd*/
-    double get_kd();
+    Couleur get_kd();
     /* Change la valeur de kd*/
-    void set_kd(double kd);
+    void set_kd(Couleur kd);
 
     /* Renvoie kr*/
     double get_kr();
@@ -40,25 +41,17 @@ class Objet
 
     /* Renvoie true si le point de la surface est visible
     par la source (argument) */
-    bool visible(std::vector<Objet>, int j, Point p, Point src);
+    bool visible(std::vector<Objet>, int j, Point p, Source src);
 
     /* Renvoie le rayon réfléchi à une source selon le point
     p de la surface de l'objet */
-    Rayon rayon_reflechi(Point p, Point src);
+    Rayon rayon_reflechi(Point p, Source src);
 
     private:
 
-    double m_kd; // indice de diffusion
+    Couleur m_kd; // indice de diffusion
     double m_kr; // indice de réflexion
 };
-
-/*Cherche le point matériel d'un objet du tableau objets le plus proche sur la trajectoire du rayon et 
-renvoie un objet InfoInterception caractéristique de l'interception */
-InfoInterception interception(std::vector<Objet> objets, Rayon ray);
-	
-/*Renvoie un vector<InfoInterception> contenant une suite d'infoInterception 
-correspondant aux réflexions successives du rayon */
-std::vector<InfoInterception> reflexions(std::vector<Objet> objets, Rayon ray, int rmax); 
 
 
 

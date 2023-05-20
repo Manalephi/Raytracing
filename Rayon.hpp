@@ -4,7 +4,7 @@
 #include <vector>
 #include "Point.hpp"
 #include "Vecteur.hpp"
-
+#include "Couleur.hpp"
 
 
 #include "InfoInterception.hpp"
@@ -33,7 +33,8 @@ class Rayon {
 	/*Donne le point du rayon à une distance t de l'origine du rayon avec t un réel positif*/
 	Point point_rayon(double t);
 	
-	
+        /*Renvoie la couleur diffusee par le rayon lors d'une intersection*/
+        Couleur couleur_diffusee(Couleur couleur_source, Vecteur normal, Couleur couleur_diffusion);
 	 
 	
 	private:
@@ -42,6 +43,9 @@ class Rayon {
 
 };
 
+double valeur_aleatoire(int seed);
+
+double valeur_aleatoire_normal(int seed);
 
 #endif //RAYON_HPP_INCLUDED
 

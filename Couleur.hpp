@@ -2,6 +2,7 @@
 #define COULEUR_HPP_INCLUDED
 
 
+
 /* Caractérise la couleur par ses composantes r g b */
 class Couleur
 {
@@ -16,13 +17,15 @@ class Couleur
     /*Renvoie m_b*/
     double get_b();
     /*Change la valeur de rouge*/
-    void set_r();
+    void set_r(double r);
     /*Change la valeur de vert*/
-    void set_v();
+    void set_v(double g);
     /*Change la valeur de bleu*/
-    void set_b();    
+    void set_b(double b);    
     
- 
+    Couleur operator+=(Couleur v);
+    Couleur operator*=(Couleur v);
+    Couleur mult_scalaire(double k);
     private:
 
     double m_r;
@@ -32,5 +35,10 @@ class Couleur
     
 };
 
+Couleur operator*(Couleur v1, Couleur v2);
+
+
 #endif //COULEUR_HPP_INCLUDED
+
+
 
