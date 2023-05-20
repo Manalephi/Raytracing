@@ -19,7 +19,7 @@ class Objet
     public:
 
     /* Constructeur */
-    Objet(Couleur kd, double kr);
+    Objet(Couleur couleur_objet, Couleur kd, double kr, double lisse);
 
     /* Renvoie kd*/
     Couleur get_kd();
@@ -30,6 +30,14 @@ class Objet
     double get_kr();
     /* Change la valeur de kr*/
     void set_kr(double kr);
+
+    Couleur get_couleur_objet();
+
+    void set_couleur_objet(Couleur couleur_objet);
+
+    double get_lisse();
+
+    void set_lisse(double lisse);
 
     /* Renvoie l'infoInterception d'une intersection entre
     un objet et un rayon */
@@ -49,6 +57,8 @@ class Objet
 
     private:
 
+    Couleur m_couleur_objet;
+    double m_lisse;
     Couleur m_kd; // indice de diffusion
     double m_kr; // indice de réflexion
 };

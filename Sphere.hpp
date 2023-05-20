@@ -15,7 +15,7 @@ class Sphere: public Objet{
     public:
 
     /* Constructeur */
-    Sphere(Point centre, double rayon, Couleur kd, double kr);
+    Sphere(Point centre, double rayon, Couleur couleur_objet, Couleur kd, double kr, double lisse);
 
     /* Getteur rayon */
     double get_rayon();
@@ -62,13 +62,19 @@ InfoInterception interception(std::vector<Sphere> objets, Rayon ray);
 	
 /*Renvoie un vector<InfoInterception> contenant une suite d'infoInterception 
 correspondant aux réflexions successives du rayon */
-std::vector<InfoInterception> reflexions(std::vector<Sphere> objets, Rayon ray, int rmax); 
+std::vector<InfoInterception> reflexions(std::vector<Sphere> objets, Rayon ray); 
 
 Couleur couleur_diffusion(Point point, std::vector<Sphere> objets, int j, std::vector<Source> sources);
-Couleur couleur_percue(Rayon rayon, int rmax, Couleur fond, std::vector<Sphere> objets, std::vector<Source> sources);
+Couleur couleur_percue(Rayon rayon, Couleur fond, std::vector<Sphere> objets, std::vector<Source> sources);
 
 Vecteur direction_aleatoire(int seed);
 
 Vecteur direction_aleatoire_signe(Vecteur normal, int seed);
+
+Couleur rayon_couleur(Rayon ray, std::vector<Sphere> objets, Couleur fond, int seed);
+
+std::vector<InfoInterception> reflexions2(std::vector<Sphere> objets, Rayon ray, int seed);
+
+Couleur couleur_percue2(Rayon rayon, Couleur fond, std::vector<Sphere> objets, std::vector<Source> sources, int seed);
 
 #endif // SPHERE_HPP_INCLUDED

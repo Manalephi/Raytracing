@@ -77,3 +77,7 @@ Vecteur Vecteur::mult_scalaire(double k) {
 Vecteur operator*(double k, Vecteur v) {
     return v.mult_scalaire(k);
 }
+
+Vecteur lerp(Vecteur v1, Vecteur v2, double t) {
+    return ((1.0 - t) * v1 + t * v2);
+}

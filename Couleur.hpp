@@ -36,7 +36,7 @@ class Couleur
 };
 
 Couleur operator*(Couleur v1, Couleur v2);
-
+Couleur operator*(double coeff, Couleur c);
 
 #endif //COULEUR_HPP_INCLUDED
 

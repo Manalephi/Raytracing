@@ -2,8 +2,8 @@
    
    
    /* Constructeur */
-    Objet::Objet(Couleur kd, double kr)
-    : m_kr(kr), m_kd(kd)
+    Objet::Objet(Couleur couleur_objet, Couleur kd, double kr, double lisse)
+    : m_couleur_objet(couleur_objet), m_kr(kr), m_kd(kd), m_lisse(lisse)
     { 
 
     }
@@ -27,6 +27,22 @@
     void Objet::set_kr(double kr){
         m_kr = kr;
     }
+
+	Couleur Objet::get_couleur_objet() {
+		return m_couleur_objet;
+	}
+
+	void Objet::set_couleur_objet(Couleur couleur_objet) {
+		m_couleur_objet = couleur_objet;
+	}
+
+	double Objet::get_lisse() {
+		return m_lisse;
+	}
+
+	void Objet::set_lisse(double lisse) {
+		m_lisse = lisse;
+	}
 
 InfoInterception Objet::intersection(Rayon ray) {
     return InfoInterception(false);

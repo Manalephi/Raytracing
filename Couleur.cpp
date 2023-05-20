@@ -49,6 +49,8 @@ Couleur operator*(Couleur v1, Couleur v2) {
     return copie;
 }        
         
-
+Couleur operator*(double coeff, Couleur c) {
+    return c.mult_scalaire(coeff);
+}
         
         

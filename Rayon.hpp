@@ -47,5 +47,6 @@ double valeur_aleatoire(int seed);
 
 double valeur_aleatoire_normal(int seed);
 
+
 #endif //RAYON_HPP_INCLUDED
 

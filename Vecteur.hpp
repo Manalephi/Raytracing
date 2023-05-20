@@ -56,4 +56,6 @@ Vecteur operator*(Vecteur v1, Vecteur v2);
 
 Vecteur operator*(double k, Vecteur v);
 
+Vecteur lerp(Vecteur v1, Vecteur v2, double t);
+
 #endif //VECTEUR_HPP_INCLUDED
