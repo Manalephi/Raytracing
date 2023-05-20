@@ -4,6 +4,7 @@
 #include <assert.h>
 #include "Rayon.hpp"
 #include "Point.hpp"
+#include "Source.hpp"
 #include "InfoInterception.hpp"
 #include "Couleur.hpp"
 #include "Objet.hpp"
@@ -15,9 +16,6 @@
 #include <SFML/Graphics.hpp>
 
 
-
-#define N 800
-#define delta 800
 
 int main() {
 	

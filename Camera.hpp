@@ -6,13 +6,14 @@
 #include "Couleur.hpp"
 #include "InfoInterception.hpp"
 #include "Sphere.hpp"
+#include "Source.hpp"
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
 #include <vector>
 
-#define N 600
-#define delta 600
+#define N 800
+#define delta 800
 
 Point grille(int i, int j);
 
